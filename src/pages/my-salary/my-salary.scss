@@ -1,0 +1,227 @@
+page-my-salary {
+    ion-header {
+        .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+            color: #fff;
+        }
+        .toolbar-background {
+            background: linear-gradient(to right, #3555DE, #628FF7)!important;
+        }
+        .toolbar-title {
+            color: #fff;
+        }
+    }
+    .content {
+        background-color: #eeeeee;
+        .noInfo {
+            font-size: rem(18);
+            color: #000;
+            margin: 0 auto;
+            text-align: center;
+            margin-top: rem(200);
+        }
+        ion-list {
+            margin-bottom: 0;
+            ion-item {
+                .item-inner  {
+                    padding-right: 0 !important;
+                    ion-label {
+                        margin: 0;
+                    }
+                
+                    .yearP {
+                        padding-left: rem(16);
+                        background-color: #eeeeee;
+                        margin-bottom: 0;
+                        height: rem(44);
+                        line-height: rem(44);
+                        font-size: rem(15);
+                        .crciwms {
+                            font-size: rem(13);
+                        }
+                    }
+                    .detail {
+                        position: relative;
+                        overflow: hidden;
+                        background-color: #fff !important;
+                        padding-left: rem(16);
+                        .buleOut {
+                            .noBorder{
+                                color: #3d76e7 !important;
+                                margin-left: rem(17) !important;
+                            }
+                            .hasBg {
+                                background: url('../assets/imgs/gz.png') no-repeat center !important;
+                                background-color: #3d76e7 !important;
+                                // background: #000 url('../../assets/imgs/pdf.png') no-repeat center;
+                                background-size: rem(10) rem(10) !important;
+                                width: rem(22) !important;
+                                height: rem(22) !important;
+                                margin-left: rem(13.5) !important;
+                                margin-top: rem(0) !important;
+                            }
+                            i{
+                                display: inline-block;
+                                width:0;
+                                height:0;
+                                border-width:rem(3) rem(3) rem(3) 0;
+                                border-style:solid;
+                                border-color:transparent #3d76e7 transparent transparent;
+                                position: absolute;
+                                left: rem(90);
+                                top: rem(7);
+                            }
+                        }
+                        .greenOut {
+                            .firstSpan {
+                                // #18b147
+                                border: 2px solid #18b147 !important;
+                                box-shadow: 0px 0px 2px 0px #18b147 !important;
+                            }
+                            // .thirdSpan {
+                            //     color: #18b147 !important;
+                            // }
+                            .salary {
+                                background-color: #18b147 !important;
+                            }
+                            .noBorder {
+                                background-color: #fff !important;
+                                color: #18b147 !important;
+                                font-size: rem(20) !important;
+                                padding-left: rem(0) !important;
+                                margin-left: rem(17) !important;
+                            }
+                            .hasBg {
+                                background: url('../assets/imgs/gz.png') no-repeat center !important;
+                                background-size: rem(10) rem(10) !important;
+                                background-color: #18b147 !important;
+                                width: rem(22) !important;
+                                height: rem(22) !important;
+                                margin-left: rem(13.5) !important;
+                                margin-top: rem(0) !important;
+                            }
+                            i{
+                                display: inline-block;
+                                width:0;
+                                height:0;
+                                border-width:rem(3) rem(3) rem(3) 0;
+                                border-style:solid;
+                                border-color:transparent #18b147 transparent transparent;
+                                position: absolute;
+                                left: rem(90);
+                                top: rem(8);
+                            }
+                        }
+                        .redOut {
+                            .firstSpan {
+                                // #18b147
+                                border: 2px solid #fb9737 !important;
+                                box-shadow: 0px 0px 2px 0px #fb9737 !important;
+                            }
+                            // .thirdSpan {
+                            //     color: #fb9737 !important;
+                            // }
+                            .salary {
+                                background-color: #fb9737 !important;
+                            }
+                            .noBorder {
+                                background-color: #fff !important;
+                                color: #fb9737 !important;
+                                font-size: rem(20) !important;
+                                padding-left: rem(0) !important;
+                                margin-left: rem(17) !important;
+                            }
+                            .hasBg {
+                                background: url('../assets/imgs/gz.png') no-repeat center !important;
+                                background-size: rem(10) rem(10) !important;
+                                background-color: #fb9737 !important;
+                                width: rem(22) !important;
+                                height: rem(22) !important;
+                                margin-left: rem(13.5) !important;
+                                margin-top: rem(0) !important;
+                            }
+                            i{
+                                display: inline-block;
+                                width:0;
+                                height:0;
+                                border-width:rem(3) rem(3) rem(3) 0;
+                                border-style:solid;
+                                border-color:transparent #fb9737 transparent transparent;
+                                position: absolute;
+                                left: rem(90);
+                                top: rem(7);
+                            }
+                        }
+                        .outDD {
+                            height: rem(50);
+                            position: relative;
+                            div {
+                                display: inline-block;
+                            }
+                            .month {
+                                color: #000;
+                                font-size: rem(14);
+                                height: rem(14);
+                                min-width: rem(38);
+                                float: left;
+                                width: 0px;
+                            }
+                            .circle {
+                                width: rem(12);
+                                height: rem(12);
+                                margin-left: rem(18);
+                                border-radius: 50%;
+                                border: 2px solid #15b144;
+                                box-shadow: 0px 0px 2px 0px #15b144;
+                                background: #ffffff;
+                                float: left;
+                                margin-top: rem(4);
+                            }
+                            .salary {
+                                margin-left: rem(25);
+                                padding: rem(5) rem(8);
+                                color: #15b144;
+                                font-size: rem(12);
+                                border-radius: rem(3);
+                                background-color: #3d76e7;
+                            }
+                            
+                            .noBorder {
+                                background-color: #fff;
+                                color: #3d76e7;
+                                font-size: rem(20);
+                                padding-left: rem(0);
+                            }
+                            .firstSpan {
+                                border: 2px solid #3d76e7;
+                                box-shadow: 0px 0px 2px 0px #3d76e7;
+                            }
+                            .thirdSpan {
+                                color: #ffffff;
+                            }
+                        }
+                        .topHide {
+                            height: rem(10);
+                        }
+                        .bottomHide {
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: rem(15);
+                            background-color: #fff;
+                        }
+                        .line {
+                            position: absolute !important;
+                            height: rem(600);
+                            left: rem(78);
+                            top: rem(20);
+                            width: 0;
+                            @include border-l-1px(#e9edf0);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

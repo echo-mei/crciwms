@@ -1,0 +1,39 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的工资</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+  <div *ngIf="!datas" class="noInfo">暂无工资信息</div>
+  <ion-list *ngIf="datas">
+    <ion-item *ngFor="let item of datas; let i = index">
+      <p class="yearP" (click)="showDetial(i)">{{ item.year }}年 <ion-icon *ngIf="item.show" class="crciwms" name="md-bottom"></ion-icon> <ion-icon *ngIf="!item.show" class="crciwms" name="md-right"></ion-icon></p>
+      <div class="detail" *ngIf="item.show">
+        <div class="line"></div>
+        <div class="topHide"></div>
+        <div [ngClass]="{'buleOut': j==0, 'greenOut':j!=0 && j%2==1, 'redOut': j!=0 && j%2==0}" *ngFor="let detail of item.details; let j = index">
+          <div class="outDD" *ngFor="let detail1 of detail.details; let k = index">
+            <span class="month" *ngIf="detail1.isFirst">{{ detail.m }}月份</span>
+            <span class="month" *ngIf="!detail1.isFirst"></span>
+            <div>
+              <!-- <span class="circle" [ngClass]="{'firstSpan': i==0 && j==0 }"></span> -->
+              <!-- <span class="salary" [ngClass]="{'thirdSpan': i==0 && j==0 }">{{ detail.s }}</span> -->
+              
+              <span class="circle firstSpan" [ngClass]="{'hasBg': k==0}">
+                <!-- <img src="../../assets/imgs/gz.png" alt="" style="display: inline-block; width: 20px;height: 20px;"> -->
+              </span>
+              <span class="salary thirdSpan" [ngClass]="{'noBorder': k==0}">{{ detail1.s }}</span>
+              <i *ngIf="k!=0"></i>
+            </div>
+          </div>
+        </div>
+        <div class="bottomHide"></div>
+      </div>
+    </ion-item>
+  </ion-list>
+</ion-content>
+

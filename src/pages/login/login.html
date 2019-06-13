@@ -1,0 +1,68 @@
+<ion-header no-border>
+
+  <ion-navbar color="white">
+    <!-- <ion-title text-center>登录</ion-title> -->
+
+
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content #content>
+  <div class="topImg">
+    <img src="assets/imgs/login_bg_top.png" alt="">
+    <div class="logoImg">
+        <img src="assets/imgs/login_logo.png" alt="">
+      </div>
+  </div>
+
+  <form [formGroup]="loginForm" (ngSubmit)="checkMsCode()">
+    <ion-item id="userCode">
+      <!-- <ion-icon class="crciwms" name="md-phone" item-left></ion-icon> 效果没图片好看 -->
+      <ion-input formControlName="accountNo" placeholder="账号/手机号" maxlength=20></ion-input>
+      <button type="button" class="useBtn" ion-button clear item-end *ngIf="loginForm.controls['accountNo'].value" (click)="loginForm.controls['accountNo'].setValue('')">
+        <!-- <ion-icon class="szom" name="guanbi"></ion-icon> -->
+        <ion-icon class="crciwms" name="md-clear"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item *ngIf="loginStatus" id="upwd">
+      <ion-input maxlength=20 formControlName="password"
+        (selectstart)="forbidden()"
+        (cut)="forbidden()"
+        (copy)="forbidden()"
+        (paste)="forbidden()" [type]="showPassword?'text':'password'" placeholder="密码" clearOnEdit=false></ion-input>
+      <button class="pwdBtn" type="button" ion-button clear item-end *ngIf="loginForm.controls['password'].value" (click)="showPassword=!showPassword">
+        <ion-icon class="crciwms" [name]="showPassword? 'md-eye':'md-eye-close'"></ion-icon>
+      </button>
+    </ion-item>
+    <!-- <ion-item *ngIf="!isPhone()" id="upwd">
+      <ion-input formControlName="password"
+        (selectstart)="forbidden()"
+        (cut)="forbidden()"
+        (copy)="forbidden()"
+        (paste)="forbidden()" [type]="showPassword?'text':'password'" placeholder="密码"></ion-input>
+      <button type="button" ion-button clear item-end *ngIf="loginForm.controls['password'].value" (click)="showPassword=!showPassword">
+        <ion-icon class="szom" [name]="showPassword?'yanjing':'eye-close'"></ion-icon>
+      </button>
+    </ion-item> -->
+    <ion-item *ngIf="!loginStatus" id="upwd">
+      <ion-input formControlName="msgCode" maxlength="6" placeholder="验证码"></ion-input>
+      <button type="button" class="useBtn" ion-button clear item-end *ngIf="loginForm.controls['accountNo'].value" (click)="loginForm.controls['msgCode'].setValue('')">
+        <!-- <ion-icon class="szom" name="guanbi"></ion-icon> -->
+        <ion-icon class="crciwms msgClear" name="md-clear"></ion-icon>
+      </button>
+      <button *ngIf="!second" type="button" class="sendms" ion-button clear item-end [disabled]="!checkNoFlag" (click)="getSMSCode()">
+        发送验证码
+      </button>
+      <button *ngIf="second" class="sendms" type="button" ion-button clear item-end>
+        {{second}}秒后重试
+      </button>
+    </ion-item>
+    <p>
+      <span class="changeStatus" (click)="changeLoginStatus()">{{ statusText }}</span>
+      <span class="forgetPwd" (click)="forgetPwd()" *ngIf="loginForm.controls['accountNo'].value">忘记密码?</span>
+    </p>
+    <button class="loginBtn" ion-button block [disabled]="loginForm.invalid">登 录</button>
+  </form>
+  <!-- <div class="footer" text-center><button ion-button clear (click)="changeLoginStatus()">{{ statusText }}</button></div> -->
+</ion-content>

@@ -1,0 +1,50 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>农民工实名制工资管理系统</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<div class="version">{{version}}</div>
+
+<ion-content>
+  <div class="myInfo" (click)="goMyInfo()">
+    <p class="topBlock"></p>
+    <div class="myInfoBlock">
+      <p class="name" *ngIf="person">{{ person.name }}</p>
+      <div class="twoDiv">
+        <!-- <p class="belong">隧道三队福建太行隧道工程部架子一队三班</p> -->
+        <p class="belong" *ngIf="person">{{ person.unitName }}</p>
+        <p class="buttonToDetail">详细信息</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="mySalary" (click)="goMySalary()">
+    <div class="bgc"></div>
+    <p class="myTitle">我的工资</p>
+    <p class="salaryInfo"></p>
+    <p class="secSalaryInfo">
+      <span class="left">{{ salaryInfo }}</span>
+      <span class="right">查看详情 <ion-icon class="crciwms" name="md-right"></ion-icon></span>
+    </p>
+  </div>
+
+  <div class="myContract" (click)="goMyContract()">
+    <div class="bgc"></div>
+    <p class="myTitle">我的合同</p>
+    <p class="salaryInfo"></p>
+    <p>{{ datas.firstParty }}</p>
+    <p class="time">{{ datas.contractBegin }} 至 {{ datas.contractEnd }}</p>
+  </div>
+
+  <div class="myComplain" (click)="goMyComplain()">
+      <div class="bgc"></div>
+      我要申诉
+  </div>
+
+  <div class="setting" (click)="goSetting()">
+    <ion-icon class="crciwms" name="md-set"></ion-icon>
+  </div>
+
+</ion-content>

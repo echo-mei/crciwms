@@ -1,0 +1,14 @@
+{
+  "name": "app",
+  "app_id": "",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "/",
+      "proxyUrl": "http://192.168.0.112:8002"
+    }
+  ]
+}

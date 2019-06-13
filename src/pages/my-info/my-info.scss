@@ -1,0 +1,129 @@
+page-my-info {
+    ion-header {
+        .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+            color: #fff;
+        }
+        .toolbar-background {
+            background: linear-gradient(to right, #3555DE, #628FF7)!important;
+        }
+        .toolbar-title {
+            color: #fff;
+        }
+    }
+    .content {
+        background-color: #eeeeee;
+        ion-list {
+            margin-bottom: 0;
+            .item-md.item-block .item-inner {
+                @include border-b-1px(color($colors,boderColor));
+                padding-right: 0;
+                margin-left: rem(16);
+                font-size: rem(14);
+                color: #808080;
+                span {
+                    display: inline-block;
+                    padding-right: rem(8);
+                    font-size: rem(15);
+                    color: #000;
+                    // width: 67%;
+                    // text-align: right;
+                    // margin-left: 8.7%;
+                    white-space: pre-wrap;
+                }
+            }
+            .latItem {
+                display: flex;
+                line-height: 10px;
+                ion-label {
+                    line-height: rem(20);
+                }
+                .a {
+                    flex: 1;
+                    float: left;
+                    color: #808080;
+                }
+                .outBox {
+                    flex: 1;
+                    // width: 67%;
+                    overflow: hidden;
+                    // padding-right: 5px !important;
+                    .inBox {
+                        float: right;
+                        width: initial;
+                        max-width: 76%;
+                        white-space: pre-wrap;
+                        color: #000;
+                        font-size: rem(15);
+                        padding-right: rem(6);
+                    }
+                }
+            }
+        }
+        .secList {
+            ion-item {
+                border: 0;
+                background-color: #eeeeee;
+                .item-inner {
+                    margin-left: 0 !important;
+                    padding-left: rem(16);
+                }
+                &.cer {
+                    ion-label {
+                        margin-bottom: 0;
+                    }
+                    .crciwms {
+                        font-size: rem(14);
+                    }
+                }
+                &.fourFather {
+                    ion-label {
+                        display: flex;
+                        justify-content: space-between;
+                        flex-wrap: wrap;
+                        margin-right: rem(16);
+                        margin-top: 0;
+                        .four {
+                            width: 48%;
+                            height: rem(115);
+                            line-height: rem(115);
+                            text-align: center;
+                            margin-top: 10px;
+                            background-color: #fff;
+                            p {
+                                font-size: rem(13);
+                            }
+                            .addP {
+                                width: rem(25);
+                                height: rem(25);
+                                line-height: rem(25);
+                                border-radius: 50%;
+                                border: 1px solid #969696;
+                                color: #666666;
+                                margin: rem(30) auto rem(9);
+                            }
+                            .img-wrap{
+                              width: 100%;
+                              height: rem(95);
+
+                              img{
+                                max-width: 100%;
+                                max-height: 100%;
+                              }
+                              .ion-md-add{
+                                font-size: 30px
+                              }
+                            }
+                        }
+                    }
+                }
+            }
+            button {
+                width: 42%;
+                margin: 0 auto;
+                height: rem(44);
+                margin-bottom: rem(5);
+                font-size: rem(16);
+            }
+        }
+    }
+}

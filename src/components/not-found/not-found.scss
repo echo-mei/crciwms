@@ -1,0 +1,21 @@
+not-found {
+    div{
+        text-align: center;
+        padding-top: rem(100);
+        position: relative;
+        background-color: #fff;
+        height: 100%;
+        img{
+            display: block;
+            width: rem(88);
+            height: rem(88);
+            position: relative;
+            left: 50%;
+            margin-left: rem(-44);
+        }
+        p{
+            font-size: rem(15);
+            color: #999999;
+        }
+    }
+}

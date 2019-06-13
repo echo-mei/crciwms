@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>验证</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <form [formGroup]="loginForm" (ngSubmit)="checkMsCode()">
+    <ion-item id="userCode">
+      <!-- <ion-icon class="crciwms" name="md-phone" item-left></ion-icon> 效果没图片好看 -->
+      <ion-input formControlName="accountNo" placeholder="手机号" [disabled]="fromLoginStatus" maxlength=20></ion-input>
+      <button type="button" class="useBtn" ion-button clear item-end *ngIf="loginForm.controls['accountNo'].value && !fromLoginStatus"  (click)="loginForm.controls['accountNo'].setValue('')">
+        <!-- <ion-icon class="szom" name="guanbi"></ion-icon> -->
+        <ion-icon class="crciwms" name="md-clear"></ion-icon>
+      </button>
+    </ion-item>
+    <ion-item id="upwd">
+      <ion-input formControlName="msgCode" maxlength="6" placeholder="验证码"></ion-input>
+      <button type="button" class="useBtn" ion-button clear item-end *ngIf="loginForm.controls['accountNo'].value" (click)="loginForm.controls['msgCode'].setValue('')">
+        <!-- <ion-icon class="szom" name="guanbi"></ion-icon> -->
+        <ion-icon class="crciwms msgClear" name="md-clear"></ion-icon>
+      </button>
+      <button *ngIf="!second" type="button" class="sendms" ion-button clear item-end [disabled]="!checkNoFlag" (click)="getSMSCode()">
+        发送验证码
+      </button>
+      <button *ngIf="second" class="sendms" type="button" ion-button clear item-end>
+        {{second}}秒后重试
+      </button>
+    </ion-item>
+    <button class="loginBtn" ion-button block [disabled]="loginForm.invalid">确 定</button>
+  </form>
+</ion-content>
+

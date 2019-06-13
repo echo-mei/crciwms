@@ -1,0 +1,107 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>个人详细信息</ion-title>
+  </ion-navbar>
+
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list *ngIf="person">
+    <ion-item>
+      姓名 <span float-right>{{person.name}}</span>
+    </ion-item>
+    <ion-item>
+      性别 <span float-right>{{sexName}}</span>
+    </ion-item>
+    <ion-item class="latItem">
+      <div class="a">出生日期</div>
+      <div class="outBox">
+        <div class="inBox">{{person.brithday}}</div>
+      </div>
+    </ion-item>
+    <ion-item>
+      身份证号 <span float-right>{{person.idNo}}</span>
+    </ion-item>
+    <ion-item class="latItem">
+      <div class="a">证件签发机关</div>
+      <div class="outBox">
+        <div class="inBox">{{person.issuedBy}}</div>
+      </div>
+    </ion-item>
+    <ion-item class="latItem">
+      <div class="a">户口所在地</div>
+      <div class="outBox">
+        <div class="inBox">{{person.hukouPlace}}</div>
+      </div>
+    </ion-item>
+    <div *ngIf="unitShow">
+      <ion-item>
+        手机号 <span float-right>{{person.phone}}</span>
+      </ion-item>
+      <ion-item>
+        民族 <span float-right>{{person.nationName}}</span>
+      </ion-item>
+      <ion-item>
+        证件有效期 <span float-right>{{person.effectiveDate}}</span>
+      </ion-item>
+      <ion-item>
+        银行卡号 <span float-right>{{person.bankNo}}</span>
+      </ion-item>
+      <ion-item class="latItem">
+        <div class="a">发卡银行</div>
+        <div class="outBox">
+          <div class="inBox">{{person.bankName}}</div>
+        </div>
+      </ion-item>
+      <ion-item class="latItem">
+        <div class="a">所属架子队</div>
+        <div class="outBox">
+          <div class="inBox">{{person.unitName}}</div>
+        </div>
+      </ion-item>
+      <ion-item class="latItem">
+        <div class="a">所属工作班组</div>
+        <div class="outBox">
+          <div class="inBox">{{person.deptName}}</div>
+        </div>
+      </ion-item>
+      <ion-item *ngIf="person.deptName">
+        进场时间 <span float-right>{{person.inAuthDate}}</span>
+      </ion-item>
+      <ion-item class="latItem">
+        <div class="a">所属劳务公司</div>
+        <div class="outBox">
+          <div class="inBox">{{person.companyName}}</div>
+        </div>
+      </ion-item>
+    </div>
+  </ion-list>
+
+  <ion-list class="secList">
+    <ion-item class="cer" (click)="showMore()">
+      {{showMoreText}}
+      <ion-icon *ngIf="unitShow" class="crciwms" name="md-top"></ion-icon>
+      <ion-icon *ngIf="!unitShow" class="crciwms" name="md-bottom"></ion-icon>
+    </ion-item>
+    <ion-item class="cer">
+      证件材料
+    </ion-item>
+    <ion-item class="fourFather">
+      <div class="four" *ngFor="let img of imageList;let imgIndex = index;">
+        <div class="img-wrap" (click)="viewImages(img)" *ngIf="img.hasFlag">
+          <img [src]="img.url">
+        </div>
+        <div class="img-wrap" (click)="uploadImg(img.type)" *ngIf="!img.hasFlag">
+          <ion-icon class="crciwms" name="md-add"></ion-icon>
+        </div>
+        <p>{{img.name}}</p>
+      </div>
+    </ion-item>
+    <!-- <button ion-button block>确认上传</button> -->
+  </ion-list>
+
+</ion-content>

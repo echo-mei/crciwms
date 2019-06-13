@@ -1,0 +1,23 @@
+<ion-nav [root]="rootPage"></ion-nav>
+<div #mask class="mask"></div>
+<div *ngIf="hasNewApk" class="install-apk">
+  <p>有新版本，请升级</p>
+  <button ion-button (click)="installApk()">升级</button>
+</div>
+<div *ngIf="showProgress" class="progress-wrapper">
+    <circle-progress
+      backgroundColor="#fdb900"
+      [percent]="progress"
+      [radius]="60"
+      [outerStrokeWidth]="16"
+      [innerStrokeWidth]="8"
+      unitsColor="#fff"
+      titleColor="#fff"
+      subtitle="正在下载"
+      subtitleColor="#fff"
+      [outerStrokeColor]="'#fff'"
+      [innerStrokeColor]="'#fdb900'"
+      [animation]="false"
+    ></circle-progress>
+</div>
+

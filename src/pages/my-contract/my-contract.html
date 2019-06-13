@@ -1,0 +1,76 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我的合同</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item class="latItem">
+      <div class="a">编号</div>
+      <div class="outBox">
+        <div class="inBox">{{datas.contractNo}}</div>
+      </div>
+    </ion-item>
+    <ion-item class="latItem">
+      <div class="a">甲方</div>
+      <div class="outBox">
+        <div class="inBox">{{ datas.firstParty }}</div>
+      </div>
+    </ion-item>
+    <ion-item class="latItem">
+      <div class="a">乙方</div>
+      <div class="outBox">
+        <div class="inBox">{{ datas.secondParty }}</div>
+      </div>
+    </ion-item>
+    <ion-item>
+      身份证号 <span>{{ datas.idNo }}</span>
+    </ion-item>
+
+    <ion-item>
+      起始日期 <span float-right>{{ datas.contractBegin }}</span>
+    </ion-item>
+    <ion-item>
+      截止日期 <span float-right>{{ datas.contractEnd }}</span>
+    </ion-item>
+    <ion-item>
+      签订日期 <span float-right>{{ datas.sigantureDate }}</span>
+    </ion-item>
+    <!-- <ion-item>
+      实际截止日期 <span float-right>{{ datas.real || '' }}</span>
+    </ion-item> -->
+    <!-- <ion-item>
+      合同类型 <span float-right>{{ datas.contractType == 1 ? '个人劳务合同':'劳务公司承包合同' }}</span>
+    </ion-item> -->
+    <ion-item class="latItem">
+      <div class="a">备注</div>
+      <div class="outBox">
+        <div class="inBox">{{ datas.remark }}</div>
+      </div>
+    </ion-item>
+
+    <ion-item-group>
+      <ion-item-divider color="light">附件</ion-item-divider>
+      <ion-item *ngIf="fileName" (click)="getContract()">
+        <ion-thumbnail item-start>
+          <img class="pdfBg" src="../assets/imgs/pdf.png">
+          <!-- <span class="pdfBg"></span> -->
+        </ion-thumbnail>
+        <ion-label>
+          <span class="pdfName">{{ fileName }}</span> </ion-label>
+        <!-- <span class="pdfBg" start></span> <span class="pdfName">{{ fileName }}</span> -->
+      </ion-item>
+      <ion-item *ngIf="!fileName">
+        <span class="noFile">暂无合同附件</span>
+      </ion-item>
+      <!-- <ion-item>
+        <span>□</span> <span>保密协议.pdf</span>
+      </ion-item> -->
+    </ion-item-group>
+  </ion-list>
+
+</ion-content>

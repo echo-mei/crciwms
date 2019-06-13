@@ -1,0 +1,28 @@
+page-error {
+  div {
+    text-align: center;
+    padding-top: rem(177);
+    position: relative;
+    background-color: #fff;
+    height: 100%;
+    img{
+        display: block;
+        width: rem(88);
+        height: rem(88);
+        position: relative;
+        left: 50%;
+        margin-left: rem(-44);
+    }
+    p{
+        font-size: rem(15);
+        color: #999999;
+    }
+    button {
+      background: #4D74EB;
+      border-radius: rem(1)!important;
+      width: rem(208);
+      height: rem(46)!important;
+      box-shadow: initial!important;
+    }
+  }
+}

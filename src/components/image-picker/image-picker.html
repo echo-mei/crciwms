@@ -1,0 +1,17 @@
+<ul class="squared" no-padding>
+  <li *ngFor="let img of images;let i=index;">
+    <div>
+      <img [src]="img.safeUrl">
+    </div>
+    <span class="close-icon">
+      <img src="assets/imgs/close.png" (click)="removeImage(i)"/>
+    </span>
+  </li>
+  <li *ngIf="images.length<max">
+    <div>
+      <button class="add-img" (click)="selectImage()" no-margin ion-button color="light" icon-only style="width: 100%;height: 100%;margin: 0;">
+        <img src="assets/imgs/add-line@3x.png"/>
+      </button>
+    </div>
+  </li>
+</ul>

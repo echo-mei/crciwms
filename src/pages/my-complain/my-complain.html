@@ -1,0 +1,23 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>我要申诉</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      申诉内容
+    </ion-item>
+    <ion-item>
+      <textarea  placeholder="申诉内容填写处..." name="tst"  [(ngModel)]="myAppeal"></textarea>
+    </ion-item>
+    <p class="txtLen"><span *ngIf="myAppeal.length <= maxLength" class="noWrap">{{ myAppeal.length || 0}}/{{ maxLength }}</span><span *ngIf="myAppeal.length > maxLength" class="isWrap">已超出{{ myAppeal.length - maxLength }}字</span></p>
+  </ion-list>
+  <button ion-button block (click)='submitAppeal()' [disabled]="!myAppeal || myAppeal.length>maxLength" class="sub">提交</button>
+</ion-content>
+

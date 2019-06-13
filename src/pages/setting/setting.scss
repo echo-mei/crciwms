@@ -1,0 +1,24 @@
+page-setting {
+    .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+        color: #fff;
+    }
+    .toolbar-background {
+        background: linear-gradient(to right, #3555DE, #628FF7)!important;
+    }
+    .toolbar-title {
+        color: #fff;
+    }
+    ion-list {
+
+        .item-md.item-block .item-inner {
+            @include border-b-1px(color($colors,boderColor));
+            padding-right: 0;
+            margin-left: rem(16);
+            font-size: rem(16);
+            color: #000;
+            .crciwms {
+                font-size: rem(16);
+            }
+        }
+    }
+}

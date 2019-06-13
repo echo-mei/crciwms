@@ -1,0 +1,55 @@
+page-my-complain {
+    ion-header {
+        .bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+            color: #fff;
+        }
+        .toolbar-background {
+            background: linear-gradient(to right, #3555DE, #628FF7)!important;
+        }
+        .toolbar-title {
+            color: #fff;
+        }
+    }
+    .content {
+
+        ion-list {
+            margin-bottom: 0;
+            .item-md.item-block .item-inner {
+                @include border-b-1px(color($colors,boderColor));
+                padding-right: 0;
+                margin-left: rem(16);
+                font-size: rem(14);
+                color: #808080;
+                textarea{
+                    height: rem(200);
+                    width: 100%;
+                    resize: none;
+                    border: none;
+                    color: #000000;
+                    // text-indent: rem(30);
+                }
+            }
+            p {
+                .noWrap{
+                    float: right;
+                    padding-right: rem(10);
+                    color: #4D74EB;
+                }
+                .isWrap {
+                    float: right;
+                    padding-right: rem(10);
+                    color: red;
+                }
+            }
+        }
+        button {
+            // position: fixed;
+            width: 40%;
+            height: rem(45);
+            margin: rem(60) auto;
+            // bottom: rem(20);
+            // left: 50%;
+            // margin-left: -20%;
+        }
+    }
+}
