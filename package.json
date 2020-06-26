@@ -74,7 +74,7 @@
     "ionic3-index-list": "^1.0.8",
     "ionicons": "3.0.0",
     "jsencrypt": "^3.0.0-rc.1",
-    "jsrsasign": "^8.0.12",
+    "jsrsasign": "^8.0.19",
     "mockjs": "^1.0.1-beta3",
     "moment": "^2.22.2",
     "ng-circle-progress": "^1.0.0",
